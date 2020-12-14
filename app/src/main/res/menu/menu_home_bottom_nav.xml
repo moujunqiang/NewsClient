@@ -3,19 +3,19 @@
 
     <item
         android:id="@+id/menu_news"
-        android:icon="@drawable/ic_launcher_background"
+        android:icon="@drawable/home_home_selector"
         android:title="新闻" />
     <item
         android:id="@+id/menu_video"
-        android:icon="@drawable/ic_launcher_background"
+        android:icon="@drawable/home_found_selector"
         android:title="百灵" />
     <item
-        android:icon="@drawable/ic_launcher_background"
+        android:icon="@drawable/home_found_selector"
         android:title="强国通" />
     <item
-        android:icon="@drawable/ic_launcher_background"
+        android:icon="@drawable/home_found_selector"
         android:title="电视台" />
     <item
-        android:icon="@drawable/ic_launcher_background"
+        android:icon="@drawable/home_found_selector"
         android:title="电台" />
 </menu>

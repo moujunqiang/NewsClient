@@ -1,11 +1,14 @@
 package com.example.newsclient;
 
 import android.os.Bundle;
+import android.text.style.EasyEditSpan;
 import android.view.MenuItem;
 
 import com.example.newsclient.adapter.BaseFragmentAdapter;
 import com.example.newsclient.view.NoScrollViewPager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.hjq.http.EasyConfig;
+import com.hjq.http.EasyHttp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,8 +32,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         mBottomNavigationView.setItemIconTintList(null);
         mBottomNavigationView.setOnNavigationItemSelectedListener(this);
         mPagerAdapter = new BaseFragmentAdapter<>(this);
-        mPagerAdapter.addFragment(HomeFragment.newInstance());
-        mPagerAdapter.addFragment(MineFragment.newInstance());
+        mPagerAdapter.addFragment(NewListFragment.newInstance());
+        mPagerAdapter.addFragment(VideoListFragment.newInstance());
 
         mViewPager.setAdapter(mPagerAdapter);
 
@@ -42,10 +45,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menu_news:
-                mPagerAdapter.setCurrentItem(HomeFragment.class);
+                mPagerAdapter.setCurrentItem(NewListFragment.class);
                 return true;
             case R.id.menu_video:
-                mPagerAdapter.setCurrentItem(MineFragment.class);
+                mPagerAdapter.setCurrentItem(VideoListFragment.class);
                 return true;
             default:
                 break;

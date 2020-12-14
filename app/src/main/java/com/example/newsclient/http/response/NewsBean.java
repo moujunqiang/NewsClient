@@ -1,6 +1,8 @@
 package com.example.newsclient.http.response;
 
-public class NewsBean {
+import java.io.Serializable;
+
+public class NewsBean implements Serializable {
 
 
     /**

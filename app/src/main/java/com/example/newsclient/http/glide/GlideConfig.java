@@ -13,7 +13,7 @@ import com.bumptech.glide.load.engine.cache.MemorySizeCalculator;
 import com.bumptech.glide.load.model.GlideUrl;
 import com.bumptech.glide.module.AppGlideModule;
 import com.bumptech.glide.request.RequestOptions;
-import com.hjq.demo.R;
+import com.example.newsclient.R;
 import com.hjq.http.EasyConfig;
 
 import java.io.File;
@@ -22,9 +22,7 @@ import java.io.InputStream;
 import androidx.annotation.NonNull;
 
 /**
- *    author : Android 轮子哥
- *    github : https://github.com/getActivity/AndroidProject
- *    time   : 2019/12/15
+
  *    desc   : Glide 全局配置
  */
 @GlideModule
@@ -61,7 +59,6 @@ public class GlideConfig extends AppGlideModule {
         builder.setBitmapPool(new LruBitmapPool(customBitmapPoolSize));
 
         // 设置默认的加载占位图和加载出错图
-        builder.setDefaultRequestOptions(new RequestOptions().placeholder(R.drawable.image_loading).error(R.drawable.image_load_err));
     }
 
     @Override

@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.newsclient.R;
-import com.example.newsclient.bean.NewsBean;
+import com.example.newsclient.http.response.NewsBean;
 
 import java.util.List;
 
@@ -19,6 +19,12 @@ import androidx.recyclerview.widget.RecyclerView;
 public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.NewsViewHolder> {
     private List<NewsBean> newsBeans;
     private Context context;
+    private OnItemClickListener onItemClickListener;
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
+    }
+
     public void setNewsBeans(List<NewsBean> newsBeans) {
         this.newsBeans = newsBeans;
     }
@@ -26,7 +32,7 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.NewsVi
     @NonNull
     @Override
     public NewsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        context=parent.getContext();
+        context = parent.getContext();
         View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_home_news, parent, false);
         return new NewsViewHolder(inflate);
     }
@@ -38,6 +44,12 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.NewsVi
         holder.tvTime.setText(newsBean.getCtime());
         holder.tvHomeDesc.setText(newsBean.getDescription());
         Glide.with(context).load(newsBean.getPicUrl()).into(holder.imageView);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onItemClickListener.onClick(position);
+            }
+        });
 
     }
 
@@ -59,5 +71,9 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.NewsVi
             tvTitle = itemView.findViewById(R.id.tv_home_name);
             imageView = itemView.findViewById(R.id.iv_home_item);
         }
+    }
+
+    public interface OnItemClickListener {
+        void onClick(int position);
     }
 }

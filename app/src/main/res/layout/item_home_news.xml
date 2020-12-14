@@ -29,23 +29,26 @@
             android:orientation="vertical">
 
             <TextView
+                android:layout_marginRight="10dp"
+                android:ellipsize="end"
+                android:maxLines="2"
                 android:id="@+id/tv_home_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="绿萝"
+                android:text="是常绿藤本植物，原生长在热带地区绿萝是常绿藤本植物，原生长在热带地区绿萝是常绿藤本植物，原生长在热带地区"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
 
             <TextView
+                android:layout_below="@id/tv_home_name"
                 android:id="@+id/tv_home_desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:ellipsize="end"
                 android:maxLines="2"
-                android:text="绿萝是常绿藤本植物，原生长在热带地区绿萝是常绿藤本植物，原生长在热带地区绿萝是常绿藤本植物，原生长在热带地区"
+                android:text="绿萝"
                 android:textColor="#666666"
                 android:textSize="14sp" />
         </RelativeLayout>

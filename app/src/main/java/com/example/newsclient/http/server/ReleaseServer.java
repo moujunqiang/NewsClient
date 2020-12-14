@@ -1,6 +1,6 @@
 package com.example.newsclient.http.server;
 
-import com.hjq.demo.http.model.UrlContant;
+import com.example.newsclient.http.model.UrlContant;
 import com.hjq.http.config.IRequestServer;
 
 /**

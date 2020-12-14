@@ -1,6 +1,7 @@
 package com.example.newsclient.http.server;
 
-import com.hjq.demo.http.model.UrlContant;
+
+import com.example.newsclient.http.model.UrlContant;
 
 /**
  * desc   : 测试环境
