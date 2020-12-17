@@ -5,6 +5,7 @@ import android.text.style.EasyEditSpan;
 import android.view.MenuItem;
 
 import com.example.newsclient.adapter.BaseFragmentAdapter;
+import com.example.newsclient.bean.ImageTextView;
 import com.example.newsclient.view.NoScrollViewPager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.hjq.http.EasyConfig;
@@ -34,6 +35,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         mPagerAdapter = new BaseFragmentAdapter<>(this);
         mPagerAdapter.addFragment(NewListFragment.newInstance());
         mPagerAdapter.addFragment(VideoListFragment.newInstance());
+        mPagerAdapter.addFragment(ImageFragment.newInstance());
+        mPagerAdapter.addFragment(TextFragment.newInstance());
+        mPagerAdapter.addFragment(Text2Fragment.newInstance());
 
         mViewPager.setAdapter(mPagerAdapter);
 
@@ -49,6 +53,15 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 return true;
             case R.id.menu_video:
                 mPagerAdapter.setCurrentItem(VideoListFragment.class);
+                return true;
+            case R.id.menu_image:
+                mPagerAdapter.setCurrentItem(ImageFragment.class);
+                return true;
+            case R.id.menu_text1:
+                mPagerAdapter.setCurrentItem(TextFragment.class);
+                return true;
+            case R.id.menu_text2:
+                mPagerAdapter.setCurrentItem(Text2Fragment.class);
                 return true;
             default:
                 break;

@@ -10,12 +10,17 @@
         android:icon="@drawable/home_found_selector"
         android:title="百灵" />
     <item
+        android:id="@+id/menu_image"
+
         android:icon="@drawable/home_found_selector"
         android:title="强国通" />
     <item
+        android:id="@+id/menu_text1"
+
         android:icon="@drawable/home_found_selector"
         android:title="电视台" />
     <item
+        android:id="@+id/menu_text2"
         android:icon="@drawable/home_found_selector"
         android:title="电台" />
 </menu>
